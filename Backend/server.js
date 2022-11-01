@@ -9,6 +9,8 @@ const connectionString = 'The string will come here.';
 
 mongoose.connect(connectionString)
     .then((results) =>{
+        // Listening to requests on port 3000
+        app.listen(3000);
         console.log('Successfull connection to database')
     })
     .catch((error) =>{
@@ -19,9 +21,6 @@ mongoose.connect(connectionString)
 const api = require('./routes/api');
 
 app.use(bodyParser.json());
-
-// Listening to requests on port 3000
-app.listen(3000);
 
 // Home get request
 app.get('/', (req, res) => {
