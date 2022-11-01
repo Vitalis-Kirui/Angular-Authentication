@@ -24,29 +24,7 @@ router.get('/', (req, res) => {
 router.post('/register');
 
 // Login api
-router.post('/login', (req, res) => {
-    let userData = req.body;
-
-    User.findOne({email : userData.email}, (error, user) => {
-        if(error){
-            console.log(error);
-        }
-        else{
-            if(!user){
-                res.send('User not found');
-            }
-            else{
-                if(user.password !== userData.password){
-                    res.send('Invalid password');
-                }
-                else{
-                    res.send(user);
-                }
-            }
-        }
-
-    })
-});
+router.post('/login');
 
 // regular events endpoint
 router.get('/events/regular', (req, res) => {
