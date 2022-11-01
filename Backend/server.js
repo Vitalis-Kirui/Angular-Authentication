@@ -1,7 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
+
+// connecting to database
+const connectionString = 'The string will come here.';
+
+mongoose.connect(connectionString)
+    .then((results) =>{
+        console.log('Successfull connection to database')
+    })
+    .catch((error) =>{
+        console.log(error);
+    });
 
 // Importing api routes
 const api = require('./routes/api');
