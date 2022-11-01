@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 });
 
 // Registration api
-router.get('/register', (req, res) => {
+router.post('/register', (req, res) => {
     let userData = req.body;
     let user  = new User(userData);
 
