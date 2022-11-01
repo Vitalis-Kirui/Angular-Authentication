@@ -5,3 +5,5 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.send('This is from API routes')
 });
+
+module.exports = router;
