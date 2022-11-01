@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const apiControllers = require('../controllers/api');
 
 
 // connecting to database
@@ -21,15 +22,15 @@ router.get('/', (req, res) => {
 });
 
 // Registration api
-router.post('/register');
+router.post('/register', apiControllers.registerUser);
 
 // Login api
-router.post('/login');
+router.post('/login', apiControllers.loginUser);
 
 // regular events endpoint
-router.get('/events/regular');
+router.get('/events/regular', apiControllers.regularEvents);
 
 // Special events endpoint
-router.get('/events/special');
+router.get('/events/special', apiControllers.specialEvents);
 
 module.exports = router;
