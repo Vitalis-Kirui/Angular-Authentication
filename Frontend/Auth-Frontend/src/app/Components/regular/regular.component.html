@@ -2,14 +2,14 @@
 
     <div class="col-md-4" *ngFor="let event of events">
 
-        <div class="card text-center">
+        <div class="card text-center my-3">
             <div class="card-body">
-                <h4><strong>{{event.title}}</strong></h4>
-                <p>{{event.description}}</p>
-                <a href="#" class="btn btn-outline-info">Buy Tickets</a>
+                <h4 class="card-title"><strong>{{event.name}}</strong></h4>
+                <p class="card-text">{{event.description}}</p>
+                <a href="#" class="btn btn-info">Buy Tickets</a>
             </div>
             <div class="card-footer text-muted">
-                <p>{{event.date | date:'shortdate'}}</p>
+                <p>{{event.date}}</p>
             </div>
         </div>
 
