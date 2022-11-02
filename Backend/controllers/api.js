@@ -25,11 +25,11 @@ const loginUser = (req, res) => {
         }
         else{
             if(!user){
-                res.send('User not found');
+                res.status(401).send('User not found');
             }
             else{
                 if(user.password !== userData.password){
-                    res.send('Invalid password');
+                    res.status(401).send('Invalid password');
                 }
                 else{
                     res.send(user);
