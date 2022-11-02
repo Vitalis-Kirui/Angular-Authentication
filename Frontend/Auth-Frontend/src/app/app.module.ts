@@ -8,6 +8,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { RegularComponent } from './Components/regular/regular.component';
 import { SpecialComponent } from './Components/special/special.component';
+import { Error404Component } from './Components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SpecialComponent } from './Components/special/special.component';
     LoginComponent,
     RegisterComponent,
     RegularComponent,
-    SpecialComponent
+    SpecialComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
