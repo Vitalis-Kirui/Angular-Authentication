@@ -37,7 +37,7 @@ const loginUser = (req, res) => {
                 else{
                     let payload = {subject : user._id}
                     let token = jwt.sign(payload, 'secretkey')
-                    res.send(token);
+                    res.send({token});
                 }
             }
         }
