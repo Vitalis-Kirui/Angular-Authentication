@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 // user registration
@@ -9,7 +10,9 @@ const registerUser = (req, res) => {
         if(error){
             console.log(error);
         }else{
-            res.send(registeredUser);
+            let payload ={subject : registeredUser._id}
+            let token = jwt.sign(payload , 'secretkey')
+            res.send({token});
         }
     });
 
