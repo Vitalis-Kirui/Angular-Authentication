@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connecting to database
-const connectionString = 'The string will come here.';
+const connectionString = 'mongodb+srv://vitalis:vitalis1234@ninjatuts.tzbzx2y.mongodb.net/Angular-Authentication?retryWrites=true&w=majority'
 
 mongoose.connect(connectionString)
     .then((results) =>{
