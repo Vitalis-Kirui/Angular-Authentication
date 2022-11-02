@@ -9,6 +9,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { RegularComponent } from './Components/regular/regular.component';
 import { SpecialComponent } from './Components/special/special.component';
 import { Error404Component } from './Components/error404/error404.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { Error404Component } from './Components/error404/error404.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
