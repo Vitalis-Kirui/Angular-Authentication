@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
+
+// Using CORS
+app.use(cors());
 
 // connecting to database
 const connectionString = 'mongodb+srv://vitalis:vitalis1234@ninjatuts.tzbzx2y.mongodb.net/Angular-Authentication?retryWrites=true&w=majority'
