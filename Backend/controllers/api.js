@@ -35,7 +35,9 @@ const loginUser = (req, res) => {
                     res.status(401).send('Invalid password');
                 }
                 else{
-                    res.send(user);
+                    let payload = {subject : user._id}
+                    let token = jwt.sign(payload, 'secretkey')
+                    res.send(token);
                 }
             }
         }
