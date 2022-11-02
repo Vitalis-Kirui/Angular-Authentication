@@ -18,7 +18,7 @@ export class RegularComponent implements OnInit {
     this.service.regularEvents()
       .subscribe(
         res =>{
-          res = this.events;
+          this.events = res;
         },
         error=>{
           console.log(error);
