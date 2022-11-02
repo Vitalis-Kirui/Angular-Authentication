@@ -9,11 +9,11 @@
                 <form class="form">
                     <div class="form-group">
                         <label for=""><strong>Email</strong></label>
-                        <input type="email" name="email" name="email" class="form-control rounded-0" required>
+                        <input type="email" name="email" name="email" [(ngModel)]="userLoginData.email" class="form-control rounded-0" required>
                     </div>
                     <div class="form-group">
                         <label for=""><strong>Password</strong></label>
-                        <input type="password" name="password" class="form-control rounded-0" required>
+                        <input type="password" name="password"  [(ngModel)]="userLoginData.password" class="form-control rounded-0" required>
                     </div>
 
                     <!-- Submit button -->
