@@ -12,8 +12,8 @@ export class EventsService {
   constructor(private http  : HttpClient) { }
 
   // Fetching regular events
-  regularEvents(events : any){
-    return this.http.get<any>(this.regularUrl , events);
+  regularEvents(){
+    return this.http.get<any>(this.regularUrl);
   };
 
 }
