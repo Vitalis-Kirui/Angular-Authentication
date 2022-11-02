@@ -8,29 +8,29 @@ import { SpecialComponent } from './Components/special/special.component';
 
 const routes: Routes = [
   {
-    path: '/events/regular',
+    path: 'events/regular',
     component : RegularComponent
   },
   {
-    path: '/events/special',
+    path: 'events/special',
     component : SpecialComponent
   },
   {
-    path :'/register',
+    path :'register',
     component :RegisterComponent
   },
   {
-    path :'/login',
+    path :'login',
     component : LoginComponent
   },
   {
     path :'',
-    redirectTo :'/events/regular',
+    redirectTo :'events/regular',
     pathMatch :'full'
   },
   {
-    path :'/home',
-    redirectTo:'/events/regular',
+    path :'home',
+    redirectTo:'events/regular',
     pathMatch : 'full'
   },
   {
