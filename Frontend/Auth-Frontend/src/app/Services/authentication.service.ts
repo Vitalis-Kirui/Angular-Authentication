@@ -25,4 +25,9 @@ export class AuthenticationService {
     return this.http.post<any>(this.loginUrl, user);
   };
 
+  // Logged in function for auth guard
+  loggedIn(){
+    return !!localStorage.getItem('token');
+  };
+
 }
