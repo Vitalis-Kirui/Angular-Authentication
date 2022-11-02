@@ -18,7 +18,7 @@ export class SpecialComponent implements OnInit {
     this.service.specialEvents()
         .subscribe(
           res =>{
-            res = this.events;
+            this.events = res;
           },
           error =>{
             console.log(error);
