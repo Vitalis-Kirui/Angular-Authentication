@@ -11,6 +11,8 @@ export class RegisterComponent implements OnInit {
   // Data storage
   registerUserData : any = {}
 
+  userRegistered = false;
+
   constructor(private service : AuthenticationService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,7 @@ export class RegisterComponent implements OnInit {
 
   // Register user function
   registerUser(){
+    this.userRegistered  = true;
     this.service.registerUser(this.registerUserData)
       .subscribe(
         res =>{

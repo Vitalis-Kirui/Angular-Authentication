@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6 mx-auto">
-        <div class="card rounded-0 my-5">
+        <div class="card rounded-0 my-5" *ngIf="!userRegistered">
             <div class="card-header mb-0">
                 <h3>Register</h3>
             </div>
@@ -22,5 +22,18 @@
 
             </div>
         </div>
+
+        <!-- After submission message -->
+        <div class="card rounded-0 my-5 text-center" *ngIf="userRegistered">
+            <div class="card-header mb-0">
+                <h3>Success</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Your registration was successfull</strong></p>
+                <p><strong>Please proceed to login</strong></p>
+                <button type="button" class="btn btn-outline-success m-2">Login</button>
+            </div>
+        </div>
+
     </div>
 </div>
