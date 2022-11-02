@@ -17,12 +17,12 @@ export class AuthenticationService {
 
   // Register user function
   registerUser(user : any){
-    return this.http.post(this.registerUrl , user);
+    return this.http.post<any>(this.registerUrl , user);
   }
 
   // Login user function
   loginUser(user : any){
-    return this.http.post(this.loginUrl, user);
+    return this.http.post<any>(this.loginUrl, user);
   };
 
 }
