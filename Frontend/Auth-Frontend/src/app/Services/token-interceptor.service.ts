@@ -7,7 +7,7 @@ import { AuthenticationService } from './authentication.service';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor(private service : AuthenticationService) { }
+  constructor(private service : AuthenticationService, private injector : Injector) { }
 
   // Intercept method
   intercept(req : any , next : any){
@@ -20,5 +20,18 @@ export class TokenInterceptorService implements HttpInterceptor {
     return next.handle(tokenizedReq)
 
   };
+
+  // Method 2 to intercept bearer token
+intercept2(req : any, next : any){
+  let service2 = this.injector.get(AuthenticationService)
+  let request = req.clone({
+    setHeaders : {
+      Authorization2 : `Bearer ${service2.getToken()}`
+    }
+  });
+
+  return next.handle(request)
+
+};
 
 }
