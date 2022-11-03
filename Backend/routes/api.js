@@ -18,7 +18,7 @@ router.post('/login', apiControllers.loginUser);
 router.get('/events/regular', apiControllers.regularEvents);
 
 // Special events endpoint
-router.get('/events/special', apiControllers.specialEvents);
+router.get('/events/special', verifyToken ,apiControllers.specialEvents);
 
 // Verify token middleware
 function verifyToken(req, res, next){
