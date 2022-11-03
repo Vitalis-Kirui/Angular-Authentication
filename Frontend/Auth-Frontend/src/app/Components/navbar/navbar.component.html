@@ -13,7 +13,7 @@
         </li>
         <li class="navbar-nav">
           <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!service.loggedIn()">Login</a>
-          <a class="nav-link" routerLink="register" routerLinkActive="active" *ngIf="!service.loggedIn()">Register</a>
+          <a class="nav-link" routerLink="/register" routerLinkActive="active" *ngIf="!service.loggedIn()">Register</a>
           <a class="nav-link" style="cursor: pointer;" *ngIf="service.loggedIn()" (click)="logout()" >Logout</a>
         </li>
       </ul>

@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
         res =>{
           this.userRegistered  = true;
           console.log(res);
-          localStorage.setItem('token', res.token);
+          // localStorage.setItem('token', res.token);
         },
         error =>{
           if(error instanceof HttpErrorResponse){
