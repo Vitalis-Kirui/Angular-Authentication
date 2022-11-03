@@ -10,6 +10,7 @@
                     <div class="form-group">
                         <label for=""><strong>Email</strong></label>
                         <input type="email" name="email" name="email" [(ngModel)]="registerUserData.email" class="form-control rounded-0" required>
+                        <small class="text-danger" *ngIf="alreadyRegistered">Email aready exist.</small>
                     </div>
                     <div class="form-group">
                         <label for=""><strong>Password</strong></label>
