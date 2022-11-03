@@ -30,4 +30,9 @@ export class AuthenticationService {
     return !!localStorage.getItem('token');
   };
 
+  // Getting token for interceptor
+  getToken(){
+    return localStorage.getItem('token');
+  };
+
 }
