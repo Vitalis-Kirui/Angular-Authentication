@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const Event = require('../models/events');
 
 // user registration
 const registerUser = (req, res) => {
@@ -60,47 +61,16 @@ const loginUser = (req, res) => {
 
 // regular events function
 const regularEvents =(req, res) => {
+    let anEvent = req.body;
 
-    let events = [
-        {
-            "_id": "1",
-            "name": "Angular",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "2",
-            "name": "Mongodb",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "3",
-            "name": "Express",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "4",
-            "name": "Mongoose",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "5",
-            "name": "CORS",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "6",
-            "name": "Bootstrap",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
+    Event.save(anEvent, (error, event) =>{
+        if(error){
+            console.log(error);
         }
-    ];
-
-    res.json(events)
+        else{
+            res.send(event);
+        }
+    })
 
 };
 
