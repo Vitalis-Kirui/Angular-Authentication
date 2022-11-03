@@ -20,6 +20,9 @@ router.get('/events/regular', apiControllers.regularEvents);
 // Special events endpoint
 router.get('/events/special', verifyToken ,apiControllers.specialEvents);
 
+// Create a new event
+router.post('/create-event', apiControllers.regularEvents);
+
 // Verify token middleware
 function verifyToken(req, res, next){
 

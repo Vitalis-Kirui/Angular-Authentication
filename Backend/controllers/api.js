@@ -62,8 +62,9 @@ const loginUser = (req, res) => {
 // regular events function
 const regularEvents =(req, res) => {
     let anEvent = req.body;
+    let event = new Event(anEvent);
 
-    Event.save(anEvent, (error, event) =>{
+    event.save(event, (error, event) =>{
         if(error){
             console.log(error);
         }
