@@ -11,7 +11,6 @@ export class EventsService {
 
     // Special events url
     private specialUrl = 'http://localhost:3000/api/events/special';
-
   constructor(private http  : HttpClient) { }
 
   // Fetching regular events
