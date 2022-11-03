@@ -22,16 +22,16 @@ export class TokenInterceptorService implements HttpInterceptor {
   };
 
   // Method 2 to intercept bearer token
-intercept2(req : any, next : any){
-  let service2 = this.injector.get(AuthenticationService)
-  let request = req.clone({
-    setHeaders : {
-      Authorization2 : `Bearer ${service2.getToken()}`
-    }
-  });
+  // intercept(req : any, next : any){
+  //   let service2 = this.injector.get(AuthenticationService)
+  //   let request = req.clone({
+  //     setHeaders : {
+  //       Authorization2 : `Bearer ${service2.getToken()}`
+  //     }
+  //   });
 
-  return next.handle(request)
+  //   return next.handle(request)
 
-};
+  // };
 
 }
