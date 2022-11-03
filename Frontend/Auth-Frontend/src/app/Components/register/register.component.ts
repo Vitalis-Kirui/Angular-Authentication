@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 
@@ -12,6 +13,7 @@ export class RegisterComponent implements OnInit {
   registerUserData : any = {}
 
   userRegistered = false;
+  alreadyRegistered = false;
 
   constructor(private service : AuthenticationService) { }
 
@@ -20,15 +22,20 @@ export class RegisterComponent implements OnInit {
 
   // Register user function
   registerUser(){
-    this.userRegistered  = true;
     this.service.registerUser(this.registerUserData)
       .subscribe(
         res =>{
+          this.userRegistered  = true;
           console.log(res);
           localStorage.setItem('token', res.token);
         },
         error =>{
-          console.log(error)
+          if(error instanceof HttpErrorResponse){
+            if(error.status === 201){
+              this.alreadyRegistered=true;
+              console.log('User already registered');
+            }
+          }
         }
       )
   };
