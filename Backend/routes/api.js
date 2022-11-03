@@ -15,13 +15,13 @@ router.post('/register', apiControllers.registerUser);
 router.post('/login', apiControllers.loginUser);
 
 // regular events endpoint
-router.get('/events/regular', apiControllers.regularEvents);
+router.get('/events/regular', apiControllers.events);
 
 // Special events endpoint
-router.get('/events/special', verifyToken ,apiControllers.specialEvents);
+router.get('/events/special', verifyToken ,apiControllers.events);
 
 // Create a new event
-router.post('/create-event', apiControllers.regularEvents);
+router.post('/create-event', apiControllers.events);
 
 // Verify token middleware
 function verifyToken(req, res, next){

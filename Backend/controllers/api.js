@@ -60,7 +60,7 @@ const loginUser = (req, res) => {
 };
 
 // regular events function
-const regularEvents =(req, res) => {
+const events =(req, res) => {
     let anEvent = req.body;
     let event = new Event(anEvent);
 
@@ -75,55 +75,8 @@ const regularEvents =(req, res) => {
 
 };
 
-// Special events function
-const specialEvents = (req, res) => {
-
-    let events = [
-        {
-            "_id": "1",
-            "name": "Angular",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "2",
-            "name": "Mongodb",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "3",
-            "name": "Express",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "4",
-            "name": "Mongoose",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "5",
-            "name": "CORS",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        },
-        {
-            "_id": "6",
-            "name": "Bootstrap",
-            "description": "Lorem Ipsum",
-            "date": "1/11/22"
-        }
-    ];
-
-    res.json(events)
-
-};
-
 module.exports = {
     registerUser,
     loginUser,
-    regularEvents,
-    specialEvents
+    events,
 }
